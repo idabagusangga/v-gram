@@ -12,7 +12,7 @@ const getPublicUrl = (filename) => {
   return `https://storage.googleapis.com/${process.env.BUCKET_NAME}/images/${filename}`
 }
 
-const sendUploadToGCS = (req, res) => {
+const sendUploadToGCS = (req, res, next) => {
   // console.log(req.body, 'from sendUploadToGCS');
   if(!req.body.token){
       res.send('invalid token')
