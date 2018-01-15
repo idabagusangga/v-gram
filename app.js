@@ -6,7 +6,7 @@ var path = require('path');
 const cors = require('cors');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
+// var index = require('./routes/index');
 var users = require('./routes/users');
 const pictures = require('./routes/picture')
 const comments = require('./routes/comment')
@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+// app.use('/', index);
 app.use('/users', users);
 app.use('/pictures',pictures)
 app.use('/comments',comments)

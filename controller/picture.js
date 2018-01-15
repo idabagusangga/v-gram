@@ -183,18 +183,6 @@ class PictureController{
             })
         }
     }
-    static addComment(req,res){
-        jwt.verify(req.body.token,process.env.SECRET,(err,decoded)=>{
-            if(err){
-                console.log(err);
-                res.status(500).json({
-                    err:err
-                })
-                return;
-            }
-            
-        })
-    }
 }
 
 module.exports = PictureController;

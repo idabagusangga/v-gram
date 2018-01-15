@@ -12,14 +12,16 @@ const getPublicUrl = (filename) => {
   return `https://storage.googleapis.com/${process.env.BUCKET_NAME}/images/${filename}`
 }
 
-const sendUploadToGCS = (req, res, next) => {
+const sendUploadToGCS = (req, res) => {
+  // console.log(req.body, 'from sendUploadToGCS');
   if(!req.body.token){
       res.send('invalid token')
   }
   if (!req.file) {
+    console.log(req.body.image);
     return next()
   }
-
+  
   const gcsname = Date.now() + req.file.originalname
   const file = bucket.file('images/'+gcsname)
 
