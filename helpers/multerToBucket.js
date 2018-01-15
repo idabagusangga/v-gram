@@ -18,7 +18,7 @@ const sendUploadToGCS = (req, res, next) => {
       res.send('invalid token')
   }
   if (!req.file) {
-    console.log(req.body.image);
+    // console.log(req.body.image);
     return next()
   }
   
